@@ -34,21 +34,27 @@ const roll = (() => {
   /**
    * Get array with numbers in range between 1 and provided max number (integer)
    * @param  {number} maxNumber    The maxiumum number in range, which must be an integer
-   * @return {number}              An array of number in range
+   * @return {()=>number}          A function returning random number from the array
    */
   function rollInRange(maxNumber) {
-    return shuffle(getNumbersInRange(maxNumber))[0];
+    const numbers = getNumbersInRange(maxNumber);
+    return () => shuffle(numbers)[0];
   }
 
   return {
-    d2: () => rollInRange(2),
-    d4: () => rollInRange(4),
-    d6: () => rollInRange(6),
-    d8: () => rollInRange(8),
-    d10: () => rollInRange(10),
-    d12: () => rollInRange(12),
-    d20: () => rollInRange(20),
-    rollInRange,
+    d2: rollInRange(2),
+    d4: rollInRange(4),
+    d6: rollInRange(6),
+    d8: rollInRange(8),
+    d10: rollInRange(10),
+    d12: rollInRange(12),
+    d20: rollInRange(20),
+    /**
+     *
+     * @param {number} maxNumber The maxiumum number in range, which must be an integer
+     * @returns  {number} A random number in provided range
+     */
+    rollInRange: (maxNumber) => rollInRange(maxNumber)(),
   };
 })();
 
