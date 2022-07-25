@@ -49,12 +49,27 @@ const TreasureChest = (() => {
 
   const numbers = Array.from(Array(50)).map((_, index) => index + 1);
   /**
+   * Randomly shuffle an array
+   * @param  {Array} array The array to shuffle
+   * @return {Array}       A new shuffled array
+   */
+  function shuffle(array) {
+    if (!Array.isArray(array))
+      throw new Error("Provided argument must be an array");
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  }
+
+  /**
    * Add stolen bronze
    * @returns {number}
    */
   Constructor.getRandomLoot = function () {
-    const randomIndex = Math.floor(Math.random() * numbers.length);
-    return numbers[randomIndex];
+    return shuffle(numbers)[0];
   };
 
   return Constructor;
