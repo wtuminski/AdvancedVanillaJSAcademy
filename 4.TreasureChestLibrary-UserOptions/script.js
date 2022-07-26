@@ -8,12 +8,58 @@ const TreasureChest = (() => {
    * @returns {void}
    */
   const Constructor = function (options) {
-    this.bronze = 0;
-    this.silver = 0;
-    this.gold = 0;
+    let { bronze, gold, silver, getCustomGetLootMessage } = {
+      bronze: 0,
+      silver: 0,
+      gold: 0,
+      ...options,
+    };
+
+    Object.defineProperties(this, {
+      bronze: {
+        /** @param {number} newBronze*/
+        set: (newBronze) => {
+          if (typeof newBronze !== "number")
+            throw new TypeError("Provided bronze must be a number.");
+          bronze = newBronze;
+        },
+        get: () => bronze,
+      },
+      silver: {
+        /** @param {number} newSilver*/
+        set: (newSilver) => {
+          if (typeof newSilver !== "number")
+            throw new TypeError("Provided silver must be a number.");
+          silver = newSilver;
+        },
+        get: () => silver,
+      },
+      gold: {
+        /** @param {number} newGold*/
+        set: (newGold) => {
+          if (typeof newGold !== "number")
+            throw new TypeError("Provided gold must be a number.");
+          bronze = newGold;
+        },
+        get: () => gold,
+      },
+      _getCustomGetLootMessage: {
+        value: getCustomGetLootMessage,
+      },
+    });
+
+    // Type definitions
+    /** @type {number} */
+    // @ts-ignore
+    this.bronze;
+    /** @type {number} */
+    // @ts-ignore
+    this.silver;
+    /** @type {number} */
+    // @ts-ignore
+    this.gold;
     /** @type {undefined | (()=>string)} */
-    this.getCustomGetLootMessage = undefined;
-    Object.assign(this, options);
+    this._getCustomGetLootMessage;
   };
 
   /**
@@ -52,7 +98,7 @@ const TreasureChest = (() => {
    */
   Constructor.prototype.getLoot = function () {
     return (
-      this.getCustomGetLootMessage?.() ??
+      this._getCustomGetLootMessage?.() ??
       `Amount of bronze: ${this.bronze}; 
   Amount of silver: ${this.silver}; 
   Amount of gold: ${this.gold}; 
