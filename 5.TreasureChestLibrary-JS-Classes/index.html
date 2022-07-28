@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Treasure Chest - JS Classes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style type="text/css">
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      width: 88%;
+    }
+
+    code {
+      display: block;
+      background-color: lightsteelblue;
+      border-radius: 50px;
+      white-space: pre;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Treasure Chest</h1>
+
+  <p>All of the magic here happens in the console.</p>
+  <p>
+    You may access the library by creating a new instane by writing `new
+    TreasureChest()` in the console and using one of follwing methods or
+    properties: bronze, silver, gold, addBronze, addSilver, addGold or
+    getLoot. All of the adding methods might be chained. The constructor
+    TreasureChest has also a static method getRandomLoot.
+  </p>
+  <p>
+    You may also provide options with base amount of gold, silver or bronze
+    and custom function `getCustomGetLootMessage` that returns customized
+    string in getLoot method.
+  </p>
+  <p>Example:</p>
+  <code>
+      new TreasureChest({
+        gold: 20,
+        bronze: 5,
+        getCustomGetLootMessage: function(){
+          return `This the amount of your shitty gold: ${this.gold}`;
+        }
+      })
+  </code>
+  <script src="./script.js"></script>
+</body>
+
+</html>

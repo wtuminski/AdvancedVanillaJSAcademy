@@ -1,13 +1,12 @@
-const TreasureChest = (() => {
+class TreasureChest {
   // @ts-check
   /**
    * @typedef {{gold?: number, silver?: number, bronze?: number, getCustomGetLootMessage?: ()=>string}} Options
    *
    * @constructor
    * @param {Options} options
-   * @returns {void}
    */
-  const Constructor = function (options) {
+  constructor(options) {
     let { bronze, gold, silver, getCustomGetLootMessage } = {
       bronze: 0,
       silver: 0,
@@ -60,14 +59,14 @@ const TreasureChest = (() => {
     this.gold;
     /** @type {undefined | (()=>string)} */
     this._getCustomGetLootMessage;
-  };
+  }
 
   /**
    * Add stolen bronze
    * @param {number} bronze The number of stolen bronze
-   * @returns {Constructor}
+   * @returns {TreasureChest}
    */
-  Constructor.prototype.addBronze = function (bronze) {
+  addBronze = function (bronze) {
     this.bronze += bronze;
     return this;
   };
@@ -75,9 +74,9 @@ const TreasureChest = (() => {
   /**
    * Add stolen silver
    * @param {number} silver The number of stolen silver
-   * @returns {Constructor}
+   * @returns {TreasureChest}
    */
-  Constructor.prototype.addSilver = function (silver) {
+  addSilver = function (silver) {
     this.silver += silver;
     return this;
   };
@@ -85,9 +84,9 @@ const TreasureChest = (() => {
   /**
    * Add stolen gold
    * @param {number} gold The number of stolen gold
-   * @returns {Constructor}
+   * @returns {TreasureChest}
    */
-  Constructor.prototype.addGold = function (gold) {
+  addGold = function (gold) {
     this.gold += gold;
     return this;
   };
@@ -96,7 +95,7 @@ const TreasureChest = (() => {
    * Add stolen bronze
    * @returns {string}
    */
-  Constructor.prototype.getLoot = function () {
+  getLoot = function () {
     return (
       this._getCustomGetLootMessage?.() ??
       `Amount of bronze: ${this.bronze}; 
@@ -106,13 +105,13 @@ const TreasureChest = (() => {
     );
   };
 
-  const numbers = Array.from(Array(50)).map((_, index) => index + 1);
+  static #numbers = Array.from(Array(50)).map((_, index) => index + 1);
   /**
    * Randomly shuffle an array
    * @param  {Array} array The array to shuffle
    * @return {Array}       A new shuffled array
    */
-  function shuffle(array) {
+  static #shuffle(array) {
     if (!Array.isArray(array))
       throw new Error("Provided argument must be an array");
     const newArray = [...array];
@@ -127,12 +126,10 @@ const TreasureChest = (() => {
    * Add stolen bronze
    * @returns {number}
    */
-  Constructor.getRandomLoot = function () {
-    return shuffle(numbers)[0];
+  static getRandomLoot = function () {
+    return this.#shuffle(this.#numbers)[0];
   };
-
-  return Constructor;
-})();
+}
 
 // @ts-ignore
 window.TreasureChest = TreasureChest;
