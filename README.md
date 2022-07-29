@@ -6,3 +6,4 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Treasure Chest - Chaining And Static Methods](/3.TreasureChestLibrary-ChainingAndStaticMethods/)
 - [Treasure Chest - User Options](/4.TreasureChestLibrary-UserOptions/)
 - [Treasure Chest - JS Classes](/5.TreasureChestLibrary-JS-Classes/)
+- [Treasure Chest = Private Class Features](/6.TreasureChestLibrary-PrivateClassFeatures/)

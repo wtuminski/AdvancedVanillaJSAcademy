@@ -1,5 +1,5 @@
+// @ts-check
 class TreasureChest {
-  // @ts-check
   /**
    * @typedef {{gold?: number, silver?: number, bronze?: number, getCustomGetLootMessage?: ()=>string}} Options
    *
