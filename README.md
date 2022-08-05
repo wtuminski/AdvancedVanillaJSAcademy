@@ -8,4 +8,5 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Treasure Chest - JS Classes](/5.TreasureChestLibrary-JS-Classes/)
 - [Treasure Chest - Private Class Features](/6.TreasureChestLibrary-PrivateClassFeatures/)
 - [Treasure Chest - Custom Events](/7.TreasureChestLibrary-CustomEvents/)
-- [Treasure Chest - Dice Web Components](/8.Dice-WebComponent/)
+- [Dice - Web Components](/8.Dice-WebComponent/)
+- [Dice - Web Components Interactivity](/9.Dice-WebComponent-Interactivity/)

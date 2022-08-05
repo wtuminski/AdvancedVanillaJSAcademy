@@ -3,7 +3,7 @@
 class RollDice extends HTMLElement {
   constructor() {
     super();
-    const content = this.innerHTML;
+    const content = this.innerHTML.trim();
     this.innerHTML = `
         <p>
 	        <button>${content || "Roll Dice"}</button>
