@@ -10,3 +10,4 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Treasure Chest - Custom Events](/7.TreasureChestLibrary-CustomEvents/)
 - [Dice - Web Components](/8.Dice-WebComponent/)
 - [Dice - Web Components Interactivity](/9.Dice-WebComponent-Interactivity/)
+- [Dice - Web Components Shadow DOM](/10.Dice-WebComponent-ShadowDOM/)
