@@ -11,12 +11,44 @@ class RollDice extends HTMLElement {
   #rollDiceMethod;
   #blockClassName = "roll-dice";
   #messageClassName = this.#blockClassName + "__message";
+  #buttonClassName = this.#blockClassName + "__button";
 
   constructor() {
     super();
     this.root = this.attachShadow({ mode: "closed" });
     this.root.innerHTML = `
-	      <button><slot>Roll Dice</slot></button>
+        <style>
+          :host {
+            display: block;
+            margin: 0.5rem;
+          }
+          .${this.#messageClassName} {
+            margin-top: 0.5rem;
+            font-size: var(--fontSize, 20px);
+            color: var(--color, blue);
+          }
+
+          .${this.#buttonClassName} {
+            border: 1px dashed;
+            border-radius: 0.5rem;
+            background-color: var(--backgroundColor, #e5e5ed);
+            font-size: var(--fontSize, 20px);
+            color: var(--color, blue);
+          }
+
+          .${this.#buttonClassName}:hover, 
+          .${this.#buttonClassName}:focus-visible {
+            border-color: #f00;
+            background-color: #edd;
+            color: #999;
+          }
+
+          .${this.#buttonClassName}:active {
+            scale: 0.9;
+          }
+
+        </style>
+	      <button class="${this.#buttonClassName}"><slot>Roll Dice</slot></button>
         <div aria-live="polite" class="${this.#messageClassName}"></div>`;
     const diceLevel = this.getAttribute("dLevel");
     this.#rollDiceMethod =

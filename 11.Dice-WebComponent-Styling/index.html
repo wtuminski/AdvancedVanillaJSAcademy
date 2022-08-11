@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Dice - Web Component - Styling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            max-width: 40em;
+            width: 88%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Dice - Web Component - Styling</h1>
+    <p>roll-dice might be customized by providing css variables (--backgroundColor and --color) or providing dLevel
+        attribute with its dice size</p>
+
+    <roll-dice></roll-dice>
+    <roll-dice dLevel="6"><span slot>Roll a D6</span></roll-dice>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
