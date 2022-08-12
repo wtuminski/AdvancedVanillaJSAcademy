@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Dice - Web Component - Styling</title>
+    <title>Dice - Web Component - ES Modules</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style type="text/css">
@@ -23,14 +23,20 @@
 
 <body>
 
-    <h1>Dice - Web Component - Styling</h1>
+    <h1>Dice - Web Component - ES Modules</h1>
     <p>roll-dice might be customized by providing css variables (--fontSize, --backgroundColor and --color) or providing
         dLevel
         attribute with its dice size</p>
 
     <roll-dice></roll-dice>
     <roll-dice dLevel="6" class="d6"><span slot>Roll a D6</span></roll-dice>
-    <script type="module" src="./script.js"></script>
+    <script type="module">
+        import { RollDice } from './rollDice.js';
+        if ("customElements" in window) {
+            window.customElements.define("roll-dice", RollDice);
+        }
+
+    </script>
 </body>
 
 </html>
