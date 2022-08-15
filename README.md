@@ -13,3 +13,4 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Dice - Web Components Shadow DOM](/10.Dice-WebComponent-ShadowDOM/)
 - [Dice - Web Components Styling](/11.Dice-WebComponent-Styling/)
 - [Dice Library - ES Modules](/12.DiceLibrary-ES-Modules/)
+- [Seven Seas](/13.SevenSeas/)
