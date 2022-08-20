@@ -1,4 +1,4 @@
-const pages = ["dice", "treasure"];
+const pages = ["home", "dice", "treasure"];
 
 export default pages.map((page) => ({
   input: `scripts/pages/${page}Page.js`,

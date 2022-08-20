@@ -1,5 +1,5 @@
 // @ts-check
-import { createTreasure, lootListeners, showLoot } from "../treasureUtils.js";
+import { createTreasure, showLoot } from "../treasureUtils.js";
 
 //
 // Inits & Event Listeners
@@ -8,4 +8,3 @@ import { createTreasure, lootListeners, showLoot } from "../treasureUtils.js";
 // Hold the treasure instance
 const treasure = createTreasure();
 showLoot(treasure);
-lootListeners(treasure);
