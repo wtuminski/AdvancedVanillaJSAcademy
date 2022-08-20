@@ -15,3 +15,4 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Dice Library - ES Modules](/12.DiceLibrary-ES-Modules/)
 - [Seven Seas](/13.SevenSeas/)
 - [Seven Seas - Bundle](/14.SevenSeas-Bundle/)
+- [Seven Seas - Page-Specific Bundles](/15.SevenSeas-PageSpecificBundles/)

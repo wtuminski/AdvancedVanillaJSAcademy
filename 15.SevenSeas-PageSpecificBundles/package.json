@@ -1,0 +1,13 @@
+{
+  "name": "15-seven-seas-bundle-page-specific-bundles",
+  "repository": "git@github.com:wtuminski/AdvancedVanillaJSAcademy.git",
+  "author": "Wiktor <wiktor.tuminski@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "rollup": "^2.78.0"
+  },
+  "scripts": {
+    "build": "rollup --config"
+  }
+}
