@@ -16,3 +16,4 @@ This repository is meant for participating in Advanced Vanilla JS Academy - http
 - [Seven Seas](/13.SevenSeas/)
 - [Seven Seas - Bundle](/14.SevenSeas-Bundle/)
 - [Seven Seas - Page-Specific Bundles](/15.SevenSeas-PageSpecificBundles/)
+- [Seven Seas - Service Worker](/16.SevenSeas-ServiceWorker/)

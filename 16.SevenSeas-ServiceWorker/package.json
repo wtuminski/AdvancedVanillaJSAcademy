@@ -1,0 +1,13 @@
+{
+  "name": "16-seven-seas-bundle-service-worker",
+  "repository": "git@github.com:wtuminski/AdvancedVanillaJSAcademy.git",
+  "author": "Wiktor <wiktor.tuminski@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "rollup": "^2.78.0"
+  },
+  "scripts": {
+    "build": "rollup --config"
+  }
+}
