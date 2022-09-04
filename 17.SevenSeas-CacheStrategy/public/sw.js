@@ -45,7 +45,17 @@
   const includesOneOf = (value, searchStrings) =>
     searchStrings.some((searchString) => value.includes(searchString));
 
-  const coreAssets = ["css/main.css", "favicon.ico"];
+  const coreAssets = [
+    "index.html",
+    "dice.html",
+    "treasure.html",
+    "offline.html",
+    "homePage.js",
+    "dicePage.js",
+    "treasurePage.js",
+    "css/main.css",
+    "favicon.ico",
+  ];
 
   self.addEventListener("install", (event) => {
     // Activate immediately
@@ -53,8 +63,7 @@
 
     event.waitUntil(
       caches.open("SevenSeas").then((cache) => {
-        cache.add(new Request("offline.html"));
-        coreAssets.forEach((asset) => cache.add(asset));
+        coreAssets.forEach((asset) => cache.add(new Request(asset)));
         return cache;
       })
     );
@@ -79,7 +88,14 @@
     }
 
     // cache-first files
-    if (includesOneOf(request.headers.get("Accept"), ["text/css", "image"])) {
+    if (
+      includesOneOf(request.headers.get("Accept"), [
+        "text/css",
+        "text/javascript",
+        "image",
+      ]) ||
+      request.url.includes(".js")
+    ) {
       event.respondWith(handleRequest(request, "cache-first"));
       return;
     }
