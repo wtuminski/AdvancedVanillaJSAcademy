@@ -3,14 +3,10 @@ import { registerServiceWorker } from "../helpers.js";
 import { RollDice } from "../RollDice.js";
 
 //
-// Functions
-//
-
-//
 // Inits & Event Listeners
 //
 
-registerServiceWorker("./sw.js");
+registerServiceWorker("sw.js");
 
 if ("customElements" in window) {
   customElements.define("roll-dice", RollDice);

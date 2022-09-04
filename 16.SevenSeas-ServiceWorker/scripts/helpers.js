@@ -26,6 +26,6 @@ export const shuffle = (array) => {
 /** @param {string} path */
 export const registerServiceWorker = (path) => {
   if (navigator && navigator.serviceWorker) {
-    navigator.serviceWorker.register("./sw.js");
+    navigator.serviceWorker.register(path);
   }
 };

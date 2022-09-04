@@ -5,7 +5,7 @@ import { createTreasure, showLoot } from "../treasureUtils.js";
 //
 // Inits & Event Listeners
 //
-registerServiceWorker("./sw.js");
+registerServiceWorker("sw.js");
 
 // Hold the treasure instance
 const treasure = createTreasure();
