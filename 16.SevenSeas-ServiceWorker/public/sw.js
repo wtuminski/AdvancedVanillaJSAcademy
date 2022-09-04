@@ -7,7 +7,7 @@
 
     event.waitUntil(
       caches.open("SevenSeas").then(function (cache) {
-        cache.add(new Request("./offline.html"));
+        cache.add(new Request("offline.html"));
         return cache;
       })
     );
@@ -15,7 +15,7 @@
 
   self.addEventListener("fetch", function (event) {
     // Get the request
-    let request = event.request;
+    const request = event.request;
 
     // Bug fix
     // https://stackoverflow.com/a/49719964

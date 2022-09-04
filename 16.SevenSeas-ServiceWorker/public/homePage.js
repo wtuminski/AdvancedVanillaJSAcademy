@@ -29,7 +29,7 @@
   /** @param {string} path */
   const registerServiceWorker = (path) => {
     if (navigator && navigator.serviceWorker) {
-      navigator.serviceWorker.register("./sw.js");
+      navigator.serviceWorker.register(path);
     }
   };
 
@@ -204,7 +204,7 @@
   //
   // Inits & Event Listeners
   //
-  registerServiceWorker();
+  registerServiceWorker("sw.js");
 
   // Hold the treasure instance
   const treasure = createTreasure();

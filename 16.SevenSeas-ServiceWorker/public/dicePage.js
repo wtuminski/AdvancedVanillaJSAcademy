@@ -29,7 +29,7 @@
   /** @param {string} path */
   const registerServiceWorker = (path) => {
     if (navigator && navigator.serviceWorker) {
-      navigator.serviceWorker.register("./sw.js");
+      navigator.serviceWorker.register(path);
     }
   };
 
@@ -130,14 +130,10 @@
   // @ts-check
 
   //
-  // Functions
-  //
-
-  //
   // Inits & Event Listeners
   //
 
-  registerServiceWorker();
+  registerServiceWorker("sw.js");
 
   if ("customElements" in window) {
     customElements.define("roll-dice", RollDice);
