@@ -87,6 +87,8 @@
     // Get the request
     const request = event.request;
 
+    if (includesOneOf(request.url, coreAssets)) return;
+
     // Bug fix
     // https://stackoverflow.com/a/49719964
     if (
