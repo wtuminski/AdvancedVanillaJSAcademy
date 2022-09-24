@@ -150,6 +150,7 @@ interface Body {
 interface FetchEvent extends Event {
   request: Request;
   respondWith(response: Promise<Response> | Response): Promise<Response>;
+  waitUntil(value: Promise<Cache | void>): void;
 }
 
 interface InstallEvent extends ExtendableEvent {
